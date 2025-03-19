@@ -135,6 +135,10 @@ export default function CalculatorSection() {
     setShowVoicebotCalculator(true)
   }
 
+  const handleCloseVoicebot = () => {
+    setShowVoicebotCalculator(false)
+  }
+
   if (activeCalculator !== "chatbot") return null
 
   return (
@@ -234,8 +238,8 @@ export default function CalculatorSection() {
                   />
                 </div>
                 <div className="flex items-center gap-2">
-                  <button 
-                    onClick={decrementChats} 
+                  <button
+                    onClick={decrementChats}
                     className="flex-none w-9 h-9 flex items-center bg-white rounded-full justify-center text-gray-500 hover:text-gray-700"
                   >
                     <Minus className="h-4 w-4" />
@@ -247,7 +251,7 @@ export default function CalculatorSection() {
                       "flex-none w-9 h-9 rounded-full flex items-center justify-center mr-2",
                       chatCount >= PLANS.superIntelligence.maxChats
                         ? "bg-gray-400 text-white cursor-not-allowed"
-                        : "bg-[#4f46e5] text-white hover:bg-[#4338ca]"
+                        : "bg-[#4f46e5] text-white hover:bg-[#4338ca]",
                     )}
                   >
                     <Plus className="h-4 w-4" />
@@ -404,7 +408,7 @@ export default function CalculatorSection() {
 
           {/* Middle Card - AI Voice or Voicebot Calculator */}
           {showVoicebotCalculator ? (
-            <VoicebotCalculator onClose={() => setShowVoicebotCalculator(false)} onPlanChange={updateVoicebotPackage} />
+            <VoicebotCalculator onClose={handleCloseVoicebot} onPlanChange={updateVoicebotPackage} />
           ) : (
             <VoicebotCard onAddVoicebot={handleAddVoicebot} />
           )}
@@ -444,26 +448,26 @@ export default function CalculatorSection() {
                 </div>
               </div>
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-3xl font-bold">Your custom package</h3>                
+                <h3 className="text-3xl font-bold">Your custom package</h3>
               </div>
               <div className="flex justify-start flex-col items-start mb-6 bg-indigo-500/70 p-4 rounded-lg">
-                  <h4 className="text-2xl font-bold text-amber-400 mb-1">{PLANS[selectedPlan].name}</h4>
-                  <p className="text-base text-white mb-6">
-                    {selectedFeatures.aiWhatsApp ? "with WhatsApp integration" : "plus addons"}
-                  </p>
-                  <div className="mb-6">
-                    <div className="text-2xl font-bold">
-                      ₹{totalPrice.toFixed(2)} <span className="text-sm font-normal">/month</span>
-                    </div>
+                <h4 className="text-2xl font-bold text-amber-400 mb-1">{PLANS[selectedPlan].name}</h4>
+                <p className="text-base text-white mb-6">
+                  {selectedFeatures.aiWhatsApp ? "with WhatsApp integration" : "plus addons"}
+                </p>
+                <div className="mb-6">
+                  <div className="text-2xl font-bold">
+                    ₹{totalPrice.toFixed(2)} <span className="text-sm font-normal">/month</span>
                   </div>
+                </div>
               </div>
 
               <div className="flex justify-center items-center mb-6">
-                <Plus className="h-5 w-5 text-white" />            
+                <Plus className="h-5 w-5 text-white" />
               </div>
 
               <div className="border-2 border-dashed border-indigo-400 rounded-lg p-6 flex flex-col items-center justify-center mb-6">
-                <button onClick={() => setActiveCalculator("voicebot")} className="flex flex-col items-center">
+                <button onClick={handleAddVoicebot} className="flex flex-col items-center">
                   <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center mb-2">
                     <Plus className="h-5 w-5 text-indigo-600" />
                   </div>

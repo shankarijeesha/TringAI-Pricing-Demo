@@ -150,6 +150,10 @@ export default function VoicebotCalculatorSection() {
     setShowChatbotCalculator(true)
   }
 
+  const handleCloseChatbot = () => {
+    setShowChatbotCalculator(false)
+  }
+
   if (activeCalculator !== "voicebot") return null
 
   return (
@@ -415,7 +419,7 @@ export default function VoicebotCalculatorSection() {
 
           {/* Middle Card - Smart Chatbot or Chatbot Calculator */}
           {showChatbotCalculator ? (
-            <ChatbotCalculator onClose={() => setShowChatbotCalculator(false)} onPlanChange={updateChatbotPackage} />
+            <ChatbotCalculator onClose={handleCloseChatbot} onPlanChange={updateChatbotPackage} />
           ) : (
             <ChatbotCard onAddChatbot={handleAddChatbot} />
           )}
@@ -456,7 +460,7 @@ export default function VoicebotCalculatorSection() {
               </div>
 
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-3xl font-bold">Your custom package</h3>                
+                <h3 className="text-3xl font-bold">Your custom package</h3>
               </div>
 
               <div className="flex justify-start flex-col items-start mb-6 bg-indigo-500/70 p-4 rounded-lg">
@@ -471,11 +475,11 @@ export default function VoicebotCalculatorSection() {
               </div>
 
               <div className="flex justify-center items-center mb-6">
-                <Plus className="h-5 w-5 text-white" />            
+                <Plus className="h-5 w-5 text-white" />
               </div>
 
               <div className="border-2 border-dashed border-indigo-400 rounded-lg p-6 flex flex-col items-center justify-center mb-6">
-                <button onClick={() => setActiveCalculator("chatbot")} className="flex flex-col items-center">
+                <button onClick={handleAddChatbot} className="flex flex-col items-center">
                   <div className="h-8 w-8 rounded-full bg-white flex items-center justify-center mb-2">
                     <Plus className="h-5 w-5 text-indigo-600" />
                   </div>

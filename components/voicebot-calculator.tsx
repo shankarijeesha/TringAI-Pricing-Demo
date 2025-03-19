@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Minus, Plus, CheckCircle, AlertCircle } from "lucide-react"
+import { Minus, Plus, CheckCircle, AlertCircle, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 // Voicebot plan pricing details
@@ -117,7 +117,18 @@ export default function VoicebotCalculator({
   }, [minuteCount, selectedPlan])
 
   return (
-    <div className="rounded-xl bg-white p-6 shadow-sm flex flex-col">
+    <div className="rounded-xl bg-white p-6 shadow-sm flex flex-col relative">
+      {/* Close button in top-right corner */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 flex items-center justify-center w-6 h-6 rounded-full bg-gray-100 hover:bg-gray-200 transition-colors"
+          aria-label="Close calculator"
+        >
+          <X className="h-4 w-4 text-gray-600" />
+        </button>
+      )}
+
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-indigo-600">Voicebot</h3>
         {/* <CheckCircle className="h-6 w-6 text-indigo-600 fill-indigo-600" /> */}

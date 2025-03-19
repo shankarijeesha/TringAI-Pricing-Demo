@@ -3,11 +3,8 @@ export default function EstimateSection() {
     <section id="estimate-section" className="w-full py-16 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mb-6 relative lg:mx-20 mx-auto">
-          <div className="absolute right-0 -top-4">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z" fill="#FFD700" />
-              <circle cx="18" cy="6" r="1.5" fill="#FFD700" />
-            </svg>
+          <div className="absolute left-60 top-[-35px]">
+              <img src="/Star-Elements.png" alt="star" />
           </div>
           <h2 className="text-[42px] font-bold text-gray-800">
             Estimate your{" "}

@@ -3,7 +3,7 @@ export default function HeroSection() {
     <section className="w-full py-16">
       <div className="container mx-auto px-4 text-center pt-5">
         <div className="mb-6 inline-flex items-center relative">
-          <div className="mr-3 absolute top-[-40px] left-0">
+          <div className="mr-3 absolute lg:top-[-40px] top-[-50px] left-0">
                <img src="/Star-Blue.svg" alt="star" />
           </div>
           <h1 className="text-[30px] lg:text-[42px] font-bold text-[#3d3d3d]">

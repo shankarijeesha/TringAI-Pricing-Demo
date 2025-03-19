@@ -3,10 +3,10 @@ export default function EstimateSection() {
     <section id="estimate-section" className="w-full py-16 scroll-mt-20">
       <div className="container mx-auto px-4">
         <div className="mb-6 relative lg:mx-20 mx-auto">
-          <div className="absolute left-60 top-[-35px]">
+          <div className="absolute lg:left-60 left-40 lg:top-[-35px] top-[-50px]">
               <img src="/Star-Elements.png" alt="star" />
           </div>
-          <h2 className="text-[42px] font-bold text-gray-800">
+          <h2 className="text-[28px] lg:text-[42px] font-bold text-gray-800">
             Estimate your{" "}
             <br />
             <span

@@ -247,32 +247,13 @@ export default function Header() {
 
             <Link
               href="#"
-              className="mt-4 block rounded-full bg-[#FDB51B] px-6 py-2.5 text-center text-sm font-medium text-white shadow-[0_4px_10px_rgba(253,181,27,0.5)] hover:bg-[#FDB51B]/90 hover:shadow-[0_6px_15px_rgba(253,181,27,0.6)] transition-all duration-300"
+              className="mt-4 block rounded-md bg-[#FDB51B] px-6 py-2.5 text-center text-sm font-medium text-white shadow-[0_4px_10px_rgba(253,181,27,0.5)] hover:bg-[#FDB51B]/90 hover:shadow-[0_6px_15px_rgba(253,181,27,0.6)] transition-all duration-300"
             >
               Book a Demo
             </Link>
-
-            {/* Mobile Bot Toggle */}
-            <div className="flex rounded-full border border-[#E8E6F6] p-0.5 mt-4">
-              {toggleOptions.map((option) => (
-                <button
-                  key={option.id}
-                  onClick={() => setActiveToggle(option.id)}
-                  className={cn(
-                    "flex-1 px-8 py-2 rounded-full text-sm font-medium transition-all duration-300",
-                    activeToggle === option.id
-                      ? "bg-[#FDB51B] text-white"
-                      : "text-[#6B7280] hover:text-gray-900"
-                  )}
-                >
-                  {option.label}
-                </button>
-              ))}
-            </div>
-
             <Link
               href="#"
-              className="block rounded-full border-2 border-[#FDB51B] bg-white px-6 py-2.5 text-center text-sm font-medium text-[#FDB51B] shadow-[0_4px_10px_rgba(253,181,27,0.15)] hover:bg-[#FDB51B]/5 hover:shadow-[0_6px_15px_rgba(253,181,27,0.25)] transition-all duration-300"
+              className="block rounded-md border-2 border-[#FDB51B] bg-white px-6 py-2.5 text-center text-sm font-medium text-[#FDB51B] shadow-[0_4px_10px_rgba(253,181,27,0.15)] hover:bg-[#FDB51B]/5 hover:shadow-[0_6px_15px_rgba(253,181,27,0.25)] transition-all duration-300"
             >
               Sign Up
             </Link>

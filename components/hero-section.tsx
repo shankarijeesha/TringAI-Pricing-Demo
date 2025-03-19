@@ -6,7 +6,7 @@ export default function HeroSection() {
           <div className="mr-3 absolute lg:top-[-40px] top-[-50px] left-0">
                <img src="/Star-Blue.svg" alt="star" />
           </div>
-          <h1 className="text-[30px] lg:text-[42px] font-bold text-[#3d3d3d]">
+          <h1 className="text-[28px] lg:text-[42px] font-bold text-[#3d3d3d]">
             Designed for your Business;{" "}
             <span
               className="inline-block relative px-4 py-1 rounded-r-md"
